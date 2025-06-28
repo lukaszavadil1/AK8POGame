@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://iyi7pe1kawk"]
+
+[ext_resource type="Script" uid="uid://8ivro67xwd4g" path="res://Utils/stamina_bar.gd" id="1_gvvmh"]
+
+[node name="StaminaBarUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 6.0
+offset_right = 30.0
+offset_bottom = 9.0
+script = ExtResource("1_gvvmh")
+
+[node name="StaminaBar" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 3.0
+color = Color(0, 1, 0, 1)
+
+[node name="StaminaBarBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 3.0
+color = Color(0.151276, 0.151276, 0.151276, 1)

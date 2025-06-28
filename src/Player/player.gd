@@ -7,8 +7,21 @@ const JUMP_VELOCITY = -400.0
 @onready var anim = $PlayerAnimation
 var is_attacking = false
 
+# Stamina
+var max_stamina = 16
+var current_stamina = max_stamina
+var stamina_regen_rate = 1.0
+var attack_stamina_cost = 5.0
+@onready var stamina_bar = $Camera2D/StaminaBarUI
+
+func _process(delta: float) -> void:
+	if current_stamina < max_stamina and not is_attacking:
+		current_stamina = min(current_stamina + stamina_regen_rate * delta, max_stamina)
+		stamina_bar.update_stamina(current_stamina, max_stamina)
+
 func _ready():
 	anim.connect("animation_finished", _on_animation_finished)
+	stamina_bar.update_stamina(current_stamina, max_stamina)
 	
 func _on_animation_finished(anim_name):
 	if anim_name == "Attack":
@@ -24,7 +37,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		
 	# Handle attack
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("ui_accept") and current_stamina >= attack_stamina_cost and not is_attacking:
+		current_stamina -= attack_stamina_cost
+		stamina_bar.update_stamina(current_stamina, max_stamina)
 		is_attacking = true
 		anim.play("Attack")
 	
