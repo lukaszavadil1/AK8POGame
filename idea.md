@@ -1,25 +1,27 @@
 # AK8POGame
 
 ## Popis
-Tahová strategická hra, kde je hlavním cílem hráče zachránit co nejvíce lidí z oblasti zasažené požárem.
+Akční plošinová hra se strategickými prvky, kde je cílem hráčem ovládaného samuraje projít všemi levely.
 
 ## Detailní popis
-Hráčem ovládaná postava záchranáře má za úkol dostat všechny osoby zasažené požárem do bezpečí. Celý tento proces komplikuje omezené množství akcí pro jednotlivé tahy a také možné šíření ohně na konci každého tahu. Přeživší osoby jsou rozmístěny různě v rámci celé mapy a každého z nich je potřeba dovést bezpečně k východu.
+Hráčem ovládaná postava samuraje má za úkol projít všechny levely a na konci porazit finálního nepřítele.
 
 ## Zařazení hry
-Tahová, strategická, simulační
+Akční, strategická, 2D
 
 ## Úvod do prostředí, charaktery, ...
 
 ## Struktura hry
 
 ### Ovládání
-Jediná postava, kterou hráč ovládá je záchranář, kliknutím na blok sousedící s tím, na kterém v současné době stojí dojde k přesunutí záchranáře na daný blok. Pokud se na tento blok rozšířil požár, tak místo přesunu záchranář oheň uhasí a zůstává na svém původním místě. V případě, že je na sousedním bloku přeživší osoba, tak je nutné nejprve provést přesun na tento blok a v rámci další akce tuto osobu uklidnit, až poté s ním lze pokračovat zpět k východu.
+Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný šipkami, dále je podporován skok šipkou nahoru a útok stisknutím mezerníku.
 
 ### Nepřátelé
-Hlavního nepřítele zde reprezentuje ohnivý element, který často dostává hráče do situace, kdy musí promyslet, jak využije zbývající akce v rámci daného tahu. Princip šíření ohně je založený na modelu celulárního automatu.
 
-### Herní mechaniky
+## Herní mechaniky
+
+### Útok
+![Utok](mechanics\attack.png)
 
 ## Grafické prvky a zvuky
 
@@ -27,8 +29,8 @@ Hlavního nepřítele zde reprezentuje ohnivý element, který často dostává 
 
 ## Návrh UI - menu, pauza, nastavení, ...
 
-## Vývojové nástroje
-Godot
+## Nástroje použité při vývoji
+Godot, Git
 
 ## Tým
 Josef Susík - vývojář, projektový manažer, designér
