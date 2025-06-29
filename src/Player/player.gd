@@ -33,9 +33,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 			
 func apply_gravity(delta: float) -> void:
+	var was_jumping = not is_on_floor()
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
+	
+	if was_jumping and is_on_floor():
+		is_jumping = false
+			
 func handle_movement() -> void:
 	if is_attacking:
 		return
@@ -58,12 +63,10 @@ func handle_jump() -> void:
 		is_jumping = true
 		
 func update_movement_animation(direction: float) -> void:
-	if direction != 0:
+	if direction != 0 or not is_on_floor():
 		player_animation.play("Run")
-	elif is_on_floor():
-		player_animation.play("Idle")
 	else:
-		player_animation.play("Jump")
+		player_animation.play("Idle")
 		
 func handle_attack() -> void:
 	if Input.is_action_just_pressed("ui_accept") and can_attack() and not is_attacking:
@@ -87,8 +90,6 @@ func _on_animation_finished(anim_name) -> void:
 	match anim_name:
 		"Attack":
 			is_attacking = false
-		"Jump":
-			is_jumping = false
 			
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
