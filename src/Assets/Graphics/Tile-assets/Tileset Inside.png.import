@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nx047m7lftk4"
-path="res://.godot/imported/ATTACK 1.png-314ebbd384b55e2e2c560342314e77cb.ctex"
+uid="uid://co6dp6xs6ha3i"
+path="res://.godot/imported/Tileset Inside.png-deb5607459311971fadce977a3bd107c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Samurai-assets/ATTACK 1.png"
-dest_files=["res://.godot/imported/ATTACK 1.png-314ebbd384b55e2e2c560342314e77cb.ctex"]
+source_file="res://Assets/Graphics/Tile-assets/Tileset Inside.png"
+dest_files=["res://.godot/imported/Tileset Inside.png-deb5607459311971fadce977a3bd107c.ctex"]
 
 [params]
 

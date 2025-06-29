@@ -92,7 +92,7 @@ func _on_animation_finished(anim_name) -> void:
 			
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
-		if event.keycode == KEY_Q and event.pressed:
+		if (event.keycode == KEY_Q or event.keycode == KEY_ESCAPE) and event.pressed:
 			quit_game()
 			
 func quit_game() -> void:

@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=4 uid="uid://bde7wamg83agw"]
 
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="1_n0qsc"]
-[ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Tile-assets/Tileset Outside.png" id="1_syshm"]
+[ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="1_syshm"]
 [ext_resource type="Script" uid="uid://cvl2kjgd6ee40" path="res://Background/background.gd" id="2_rfktq"]
-[ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Background-assets/Sky.png" id="3_0urlm"]
-[ext_resource type="Texture2D" uid="uid://cy3c16rfngcsa" path="res://Background-assets/Grass Mountains.png" id="4_77x7w"]
-[ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Background-assets/DarkGreen.png" id="5_rfktq"]
+[ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Assets/Graphics/Background-assets/Sky.png" id="3_0urlm"]
+[ext_resource type="Texture2D" uid="uid://cy3c16rfngcsa" path="res://Assets/Graphics/Background-assets/Grass Mountains.png" id="4_77x7w"]
+[ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Assets/Graphics/Background-assets/DarkGreen.png" id="5_rfktq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoyoh"]
 texture = ExtResource("1_syshm")

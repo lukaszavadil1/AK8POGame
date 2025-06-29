@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co6dp6xs6ha3i"
-path="res://.godot/imported/Tileset Inside.png-3becde6a4c48ba85ea24ec9aa4bc3367.ctex"
+uid="uid://dxb1s35l1rp7w"
+path="res://.godot/imported/IDLE.png-ad911e212863aef100f0893628220275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile-assets/Tileset Inside.png"
-dest_files=["res://.godot/imported/Tileset Inside.png-3becde6a4c48ba85ea24ec9aa4bc3367.ctex"]
+source_file="res://Assets/Graphics/Samurai-assets/IDLE.png"
+dest_files=["res://.godot/imported/IDLE.png-ad911e212863aef100f0893628220275.ctex"]
 
 [params]
 

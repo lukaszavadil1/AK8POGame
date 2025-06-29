@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3khdi6566bam"
-path="res://.godot/imported/RUN.png-2cb020b652b5ea8cb3d0fe517df6abef.ctex"
+uid="uid://5uc03sgdgvrf"
+path="res://.godot/imported/HURT.png-e24b9bb99e6f04425a4005e564118a82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Samurai-assets/RUN.png"
-dest_files=["res://.godot/imported/RUN.png-2cb020b652b5ea8cb3d0fe517df6abef.ctex"]
+source_file="res://Assets/Graphics/Samurai-assets/HURT.png"
+dest_files=["res://.godot/imported/HURT.png-e24b9bb99e6f04425a4005e564118a82.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c843f4bcfeco6"
-path="res://.godot/imported/Tileset Outside.png-66d92af52850337c24d5857daf8e7a7a.ctex"
+uid="uid://caujucq411s8b"
+path="res://.godot/imported/Rock Mountains.png-9a28575329849de82461d83f0fc4f78b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile-assets/Tileset Outside.png"
-dest_files=["res://.godot/imported/Tileset Outside.png-66d92af52850337c24d5857daf8e7a7a.ctex"]
+source_file="res://Assets/Graphics/Background-assets/Rock Mountains.png"
+dest_files=["res://.godot/imported/Rock Mountains.png-9a28575329849de82461d83f0fc4f78b.ctex"]
 
 [params]
 

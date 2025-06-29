@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgbesxvo2nj5l"
-path="res://.godot/imported/DarkGreen.png-e3556b41287561808eb6208c6d48934a.ctex"
+uid="uid://cy3c16rfngcsa"
+path="res://.godot/imported/Grass Mountains.png-6085c46a521426e61be017a5b90355f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background-assets/DarkGreen.png"
-dest_files=["res://.godot/imported/DarkGreen.png-e3556b41287561808eb6208c6d48934a.ctex"]
+source_file="res://Assets/Graphics/Background-assets/Grass Mountains.png"
+dest_files=["res://.godot/imported/Grass Mountains.png-6085c46a521426e61be017a5b90355f7.ctex"]
 
 [params]
 

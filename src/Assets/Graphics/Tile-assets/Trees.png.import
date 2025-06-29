@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5uc03sgdgvrf"
-path="res://.godot/imported/HURT.png-46cf3e87a28719727ffe20cd23a75ecb.ctex"
+uid="uid://b8h4ovmh1c5nx"
+path="res://.godot/imported/Trees.png-95e72a53cabd224cd969e0342176ce5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Samurai-assets/HURT.png"
-dest_files=["res://.godot/imported/HURT.png-46cf3e87a28719727ffe20cd23a75ecb.ctex"]
+source_file="res://Assets/Graphics/Tile-assets/Trees.png"
+dest_files=["res://.godot/imported/Trees.png-95e72a53cabd224cd969e0342176ce5d.ctex"]
 
 [params]
 

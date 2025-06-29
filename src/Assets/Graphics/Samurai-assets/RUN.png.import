@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wnkhofjrmvoi"
-path="res://.godot/imported/Clouds.png-7c0e57c16d80d2e8e5e502992406dcb8.ctex"
+uid="uid://3khdi6566bam"
+path="res://.godot/imported/RUN.png-155900bea9e25ff3aba6d61c3c81cc5c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background-assets/Clouds.png"
-dest_files=["res://.godot/imported/Clouds.png-7c0e57c16d80d2e8e5e502992406dcb8.ctex"]
+source_file="res://Assets/Graphics/Samurai-assets/RUN.png"
+dest_files=["res://.godot/imported/RUN.png-155900bea9e25ff3aba6d61c3c81cc5c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caujucq411s8b"
-path="res://.godot/imported/Rock Mountains.png-16e43b1d762df4aeecc1022d668fcdd2.ctex"
+uid="uid://nx047m7lftk4"
+path="res://.godot/imported/ATTACK 1.png-a12f0eef1660afd203346f9848789d63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background-assets/Rock Mountains.png"
-dest_files=["res://.godot/imported/Rock Mountains.png-16e43b1d762df4aeecc1022d668fcdd2.ctex"]
+source_file="res://Assets/Graphics/Samurai-assets/ATTACK 1.png"
+dest_files=["res://.godot/imported/ATTACK 1.png-a12f0eef1660afd203346f9848789d63.ctex"]
 
 [params]
 
