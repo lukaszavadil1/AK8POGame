@@ -83,11 +83,17 @@ func regenerate_stamina(delta: float) -> void:
 		current_stamina = min(current_stamina + STAMINA_REGEN_RATE * delta, MAX_STAMINA)
 		stamina_bar.update_stamina(current_stamina, MAX_STAMINA)
 
-func _on_animation_finished(anim_name):
+func _on_animation_finished(anim_name) -> void:
 	match anim_name:
 		"Attack":
 			is_attacking = false
 		"Jump":
 			is_jumping = false
-
-	move_and_slide()
+			
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == KEY_Q and event.pressed:
+			quit_game()
+			
+func quit_game() -> void:
+	get_tree().quit()

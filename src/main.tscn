@@ -13,14 +13,23 @@ offset_right = 723.0
 offset_bottom = 233.0
 text = "Play"
 
+[node name="ControlsButton" type="Button" parent="."]
+offset_left = 401.0
+offset_top = 261.0
+offset_right = 724.0
+offset_bottom = 375.0
+text = "Controls
+"
+
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 398.0
-offset_top = 314.0
-offset_right = 721.0
-offset_bottom = 428.0
+offset_left = 400.0
+offset_top = 402.0
+offset_right = 723.0
+offset_bottom = 516.0
 text = "Quit"
 
 [node name="Background" parent="." instance=ExtResource("2_0xm2m")]
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

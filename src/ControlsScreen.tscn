@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://dine7iwfupm88"]
+
+[ext_resource type="Script" uid="uid://d0ktkbleai2lx" path="res://controls_screen.gd" id="1_ih8mc"]
+[ext_resource type="PackedScene" uid="uid://ctddc52hguael" path="res://Background/Background.tscn" id="1_tdcuh"]
+
+[node name="ControlsUI" type="Node2D"]
+script = ExtResource("1_ih8mc")
+
+[node name="ControlsContainer" type="VBoxContainer" parent="."]
+offset_left = 360.0
+offset_top = 42.0
+offset_right = 818.0
+offset_bottom = 568.0
+
+[node name="Title" type="Label" parent="ControlsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="TitleSpacing" type="MarginContainer" parent="ControlsContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+
+[node name="ControlsTextContainer" type="HBoxContainer" parent="ControlsContainer"]
+layout_mode = 2
+
+[node name="ControlsKeys" type="Label" parent="ControlsContainer/ControlsTextContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "L + R arrow keys | A + D
+-----------------------------------
+Up arrow key | W
+-----------------------------------
+Space
+-----------------------------------
+Esc | Q"
+
+[node name="VerticalSeparatorContainer" type="VBoxContainer" parent="ControlsContainer/ControlsTextContainer"]
+layout_mode = 2
+
+[node name="VerticalSeparator" type="Label" parent="ControlsContainer/ControlsTextContainer/VerticalSeparatorContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|"
+
+[node name="ControlsActions" type="Label" parent="ControlsContainer/ControlsTextContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Move
+----------------
+Jump
+----------------
+Attack
+----------------
+Quit Game"
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="BackButton" type="Button" parent="ControlsContainer"]
+layout_mode = 2
+text = "Back to menu"
+
+[node name="Background" parent="." instance=ExtResource("1_tdcuh")]
+
+[connection signal="pressed" from="ControlsContainer/BackButton" to="." method="_on_back_button_pressed"]
