@@ -13,11 +13,14 @@ const ATTACK_COST = 5.0
 @onready var player_animation = $PlayerAnimation
 @onready var player_sprite = $PlayerAnimatedSprite
 @onready var stamina_bar = $Camera2D/StaminaBarUI
+@onready var attack_area = $AttackArea
 
 # States
 var current_stamina = MAX_STAMINA
 var is_attacking = false
 var is_jumping = false
+const ATTACK_AREA_OFFSET_X = 32
+
 
 func _ready() -> void:
 	player_animation.animation_finished.connect(_on_animation_finished)
@@ -54,6 +57,7 @@ func handle_horizontal_movement(direction: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 		player_sprite.flip_h = direction < 0
+		attack_area.position.x = ATTACK_AREA_OFFSET_X * (-1 if player_sprite.flip_h else 1)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -73,7 +77,14 @@ func handle_attack() -> void:
 		consume_stamina(ATTACK_COST)
 		is_attacking = true
 		player_animation.play("Attack")
+		perform_attack()
 
+
+func perform_attack() -> void:
+	for body in attack_area.get_overlapping_bodies():
+		if body.has_method("take_damage"):
+			body.take_damage(10)
+			
 func can_attack() -> bool:
 	return current_stamina >= ATTACK_COST
 

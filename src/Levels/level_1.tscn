@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bde7wamg83agw"]
+[gd_scene load_steps=12 format=4 uid="uid://bde7wamg83agw"]
 
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="1_n0qsc"]
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="1_syshm"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cy3c16rfngcsa" path="res://Assets/Graphics/Background-assets/Grass Mountains.png" id="4_77x7w"]
 [ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Assets/Graphics/Background-assets/DarkGreen.png" id="5_rfktq"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="7_0urlm"]
+[ext_resource type="PackedScene" uid="uid://chbaa0beslqiv" path="res://Enemies/Enemy1.tscn" id="8_77x7w"]
+[ext_resource type="Script" uid="uid://cf6okgw5sp11w" path="res://Enemies/enemy_1.gd" id="9_xoyoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoyoh"]
 texture = ExtResource("1_syshm")
@@ -451,3 +453,7 @@ texture = ExtResource("4_77x7w")
 position = Vector2(170, 421)
 
 [node name="HealthBarUI" parent="." instance=ExtResource("7_0urlm")]
+
+[node name="Enemy1" parent="." instance=ExtResource("8_77x7w")]
+position = Vector2(1134, 524)
+script = ExtResource("9_xoyoh")
