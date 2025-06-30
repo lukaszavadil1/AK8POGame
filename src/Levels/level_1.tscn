@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bde7wamg83agw"]
+[gd_scene load_steps=15 format=4 uid="uid://bde7wamg83agw"]
 
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="1_n0qsc"]
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="1_syshm"]
@@ -6,11 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Assets/Graphics/Background-assets/Sky.png" id="3_0urlm"]
 [ext_resource type="Texture2D" uid="uid://cy3c16rfngcsa" path="res://Assets/Graphics/Background-assets/Grass Mountains.png" id="4_77x7w"]
 [ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Assets/Graphics/Background-assets/DarkGreen.png" id="5_rfktq"]
+[ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Menu/PauseScreen.tscn" id="6_77x7w"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="7_0urlm"]
 [ext_resource type="PackedScene" uid="uid://chbaa0beslqiv" path="res://Enemies/Enemy1.tscn" id="8_77x7w"]
-[ext_resource type="Script" uid="uid://cf6okgw5sp11w" path="res://Enemies/enemy_1.gd" id="9_xoyoh"]
+[ext_resource type="Script" uid="uid://dm7xswq0ddam" path="res://Enemies/enemy_1.gd" id="9_xoyoh"]
 [ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="10_62b6n"]
-[ext_resource type="Script" uid="uid://plo2epf23ol8" path="res://Assets/EndTree/EbdTree.gd" id="11_rs4xw"]
+[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="11_rs4xw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoyoh"]
 texture = ExtResource("1_syshm")
@@ -463,3 +464,5 @@ script = ExtResource("9_xoyoh")
 [node name="EndTree" parent="." instance=ExtResource("10_62b6n")]
 position = Vector2(96, 1221)
 script = ExtResource("11_rs4xw")
+
+[node name="PauseScreen" parent="." instance=ExtResource("6_77x7w")]

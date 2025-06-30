@@ -36,7 +36,7 @@ Up arrow key
 -----------------------------------
 Space
 -----------------------------------
-Esc | Q"
+Esc | P"
 
 [node name="VerticalSeparatorContainer" type="VBoxContainer" parent="ControlsContainer/ControlsTextContainer"]
 layout_mode = 2
@@ -68,7 +68,7 @@ Jump
 ----------------
 Attack
 ----------------
-Quit Game"
+Pause Game"
 horizontal_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="ControlsContainer"]

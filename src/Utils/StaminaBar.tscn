@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://iyi7pe1kawk"]
 
-[ext_resource type="Script" uid="uid://8ivro67xwd4g" path="res://Utils/stamina_bar.gd" id="1_gvvmh"]
+[ext_resource type="Script" uid="uid://cmke4oh6alko8" path="res://Utils/stamina_bar.gd" id="1_gvvmh"]
 
 [node name="StaminaBarUI" type="Control"]
 layout_mode = 3

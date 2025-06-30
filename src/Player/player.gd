@@ -4,19 +4,23 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-# Stamina settings
-const MAX_STAMINA = 16
+# User stats settings
+const MAX_STAMINA = 16.0
 const STAMINA_REGEN_RATE = 1.0
 const ATTACK_COST = 5.0
+const MAX_HEALTH = 100.0
+const ATTACK_POWER = 10.0
 
 # Nodes
 @onready var player_animation = $PlayerAnimation
 @onready var player_sprite = $PlayerAnimatedSprite
 @onready var stamina_bar = $Camera2D/StaminaBarUI
 @onready var attack_area = $AttackArea
+@onready var health_bar = $"../HealthBarUI"
 
 # States
 var current_stamina = MAX_STAMINA
+var current_health = MAX_HEALTH
 var is_attacking = false
 var is_jumping = false
 const ATTACK_AREA_OFFSET_X = 32
@@ -102,10 +106,8 @@ func _on_animation_finished(anim_name) -> void:
 		"Attack":
 			is_attacking = false
 			
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		if (event.keycode == KEY_Q or event.keycode == KEY_ESCAPE) and event.pressed:
-			quit_game()
-			
-func quit_game() -> void:
-	get_tree().quit()
+func take_damage(amount: float) -> void:
+	current_health = max(current_health - amount, 0)
+	if health_bar:
+		health_bar.update_health(current_health, MAX_HEALTH)
+	# TODO Add death logic here
