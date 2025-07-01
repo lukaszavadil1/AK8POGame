@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="6_iept8"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="7_du0bi"]
 [ext_resource type="PackedScene" uid="uid://chbaa0beslqiv" path="res://Enemies/Enemy1.tscn" id="8_2ioti"]
-[ext_resource type="Script" uid="uid://dm7xswq0ddam" path="res://Enemies/enemy_1.gd" id="9_57i1m"]
+[ext_resource type="Script" uid="uid://cf6okgw5sp11w" path="res://Enemies/enemy_1.gd" id="9_57i1m"]
 [ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="10_vuoi4"]
-[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="11_xffek"]
+[ext_resource type="Script" uid="uid://plo2epf23ol8" path="res://Assets/EndTree/EbdTree.gd" id="11_xffek"]
 [ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Scenes/PauseScreen.tscn" id="12_tiuk7"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoyoh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_afv7b"]
 texture = ExtResource("1_hvtee")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -394,7 +394,7 @@ texture = ExtResource("1_hvtee")
 
 [sub_resource type="TileSet" id="TileSet_f4pg2"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_xoyoh")
+sources/0 = SubResource("TileSetAtlasSource_afv7b")
 
 [node name="Level1" type="Node2D"]
 
