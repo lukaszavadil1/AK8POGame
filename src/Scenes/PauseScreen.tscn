@@ -63,5 +63,14 @@ offset_bottom = 371.0
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
+[node name="UpgradePoints" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 395.0
+offset_right = 654.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
 [connection signal="pressed" from="ColorRect/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ColorRect/BackToMenu" to="." method="_on_back_to_menu_pressed"]
