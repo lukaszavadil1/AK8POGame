@@ -14,3 +14,7 @@ func reset():
 	stamina = base_stamina
 	attack = 10.0
 	upgrade_points = 10
+	
+	
+func add_points(points: int) -> void:
+	upgrade_points += points

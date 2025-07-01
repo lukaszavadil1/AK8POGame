@@ -49,4 +49,5 @@ func die() -> void:
 	is_dead = true
 	enemy_animation.play("Death")
 	await enemy_animation.animation_finished
+	PlayerStats.add_points(2)
 	queue_free()
