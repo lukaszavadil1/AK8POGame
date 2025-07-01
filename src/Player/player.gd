@@ -4,12 +4,10 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-# User stats settings
-const MAX_STAMINA = 16.0
+# Combat settings
 const STAMINA_REGEN_RATE = 1.0
 const ATTACK_COST = 5.0
-const MAX_HEALTH = 100.0
-const ATTACK_POWER = 10.0
+const ATTACK_AREA_OFFSET_X = 32
 
 # Nodes
 @onready var player_animation = $PlayerAnimation
@@ -19,16 +17,14 @@ const ATTACK_POWER = 10.0
 @onready var health_bar = $"../HealthBarUI"
 
 # States
-var current_stamina = MAX_STAMINA
-var current_health = MAX_HEALTH
 var is_attacking = false
 var is_jumping = false
-const ATTACK_AREA_OFFSET_X = 32
 
 
 func _ready() -> void:
+	PlayerStats.health = PlayerStats.base_health
+	PlayerStats.stamina = PlayerStats.base_stamina
 	player_animation.animation_finished.connect(_on_animation_finished)
-	stamina_bar.update_stamina(current_stamina, MAX_STAMINA)
 
 func _process(delta: float) -> void:
 	regenerate_stamina(delta)
@@ -87,27 +83,33 @@ func handle_attack() -> void:
 func perform_attack() -> void:
 	for body in attack_area.get_overlapping_bodies():
 		if body.has_method("take_damage"):
-			body.take_damage(10)
+			body.take_damage(PlayerStats.attack)
+			return
+	lose_health(PlayerStats.attack)
 			
 func can_attack() -> bool:
-	return current_stamina >= ATTACK_COST
+	return PlayerStats.stamina >= ATTACK_COST
 
 func consume_stamina(amount: float) -> void:
-	current_stamina = max(current_stamina - amount, 0)
-	stamina_bar.update_stamina(current_stamina, MAX_STAMINA)
+	PlayerStats.stamina = max(PlayerStats.stamina - amount, 0)
+	stamina_bar.update_stamina(PlayerStats.stamina, PlayerStats.base_stamina)
 
 func regenerate_stamina(delta: float) -> void:
-	if not is_attacking and current_stamina < MAX_STAMINA:
-		current_stamina = min(current_stamina + STAMINA_REGEN_RATE * delta, MAX_STAMINA)
-		stamina_bar.update_stamina(current_stamina, MAX_STAMINA)
+	if not is_attacking and PlayerStats.stamina < PlayerStats.base_stamina:
+		PlayerStats.stamina = min(PlayerStats.stamina + STAMINA_REGEN_RATE * delta, PlayerStats.base_stamina)
+		stamina_bar.update_stamina(PlayerStats.stamina, PlayerStats.base_stamina)
 
 func _on_animation_finished(anim_name) -> void:
 	match anim_name:
 		"Attack":
 			is_attacking = false
 			
-func take_damage(amount: float) -> void:
-	current_health = max(current_health - amount, 0)
-	if health_bar:
-		health_bar.update_health(current_health, MAX_HEALTH)
-	# TODO Add death logic here
+func lose_health(amount: float) -> void:
+	PlayerStats.health = max(PlayerStats.health - amount, 0)
+	health_bar.update_health(PlayerStats.health, PlayerStats.base_health)
+	if PlayerStats.health <= 0:
+		die()
+		
+func die() -> void:
+	PlayerStats.reset()
+	get_tree().reload_current_scene()

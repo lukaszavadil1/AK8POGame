@@ -1,11 +1,11 @@
 extends CanvasLayer
 
+@onready var bar: ColorRect = $HealthBar
+@onready var text: Label = $HealthBarText
 
-@onready var fill = $HealthBar
-@onready var percent = $HealthBarText
-var max_width: float = 300.0
+const BAR_WIDTH: float = 300.0
 
-func update_health(value: float, max_value: float):
-	var health_percentage = (value / max_value) * 100
-	fill.size.x = (value / max_value) * max_width
-	percent.text = "%.0f %%" % health_percentage
+func update_health(current: float, base: float) -> void:
+	var ratio = clamp(current / base, 0.0, 1.0)
+	bar.size.x = BAR_WIDTH * ratio
+	text.text = "%.0f / %.0f" % [current, base]

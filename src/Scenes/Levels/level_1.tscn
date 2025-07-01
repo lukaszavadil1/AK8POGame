@@ -1,20 +1,20 @@
 [gd_scene load_steps=15 format=4 uid="uid://bde7wamg83agw"]
 
-[ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="1_n0qsc"]
-[ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="1_syshm"]
-[ext_resource type="Script" uid="uid://cvl2kjgd6ee40" path="res://Background/background.gd" id="2_rfktq"]
-[ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Assets/Graphics/Background-assets/Sky.png" id="3_0urlm"]
-[ext_resource type="Texture2D" uid="uid://cy3c16rfngcsa" path="res://Assets/Graphics/Background-assets/Grass Mountains.png" id="4_77x7w"]
-[ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Assets/Graphics/Background-assets/DarkGreen.png" id="5_rfktq"]
-[ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Menu/PauseScreen.tscn" id="6_77x7w"]
-[ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="7_0urlm"]
-[ext_resource type="PackedScene" uid="uid://chbaa0beslqiv" path="res://Enemies/Enemy1.tscn" id="8_77x7w"]
-[ext_resource type="Script" uid="uid://dm7xswq0ddam" path="res://Enemies/enemy_1.gd" id="9_xoyoh"]
-[ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="10_62b6n"]
-[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="11_rs4xw"]
+[ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="1_hvtee"]
+[ext_resource type="Script" uid="uid://cvl2kjgd6ee40" path="res://Background/background.gd" id="2_323c3"]
+[ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Assets/Graphics/Background-assets/Sky.png" id="3_i0khc"]
+[ext_resource type="Texture2D" uid="uid://cy3c16rfngcsa" path="res://Assets/Graphics/Background-assets/Grass Mountains.png" id="4_amnh0"]
+[ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Assets/Graphics/Background-assets/DarkGreen.png" id="5_7xck5"]
+[ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="6_iept8"]
+[ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="7_du0bi"]
+[ext_resource type="PackedScene" uid="uid://chbaa0beslqiv" path="res://Enemies/Enemy1.tscn" id="8_2ioti"]
+[ext_resource type="Script" uid="uid://dm7xswq0ddam" path="res://Enemies/enemy_1.gd" id="9_57i1m"]
+[ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="10_vuoi4"]
+[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="11_xffek"]
+[ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Scenes/PauseScreen.tscn" id="12_tiuk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoyoh"]
-texture = ExtResource("1_syshm")
+texture = ExtResource("1_hvtee")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -404,7 +404,7 @@ tile_map_data = PackedByteArray("AAAAACMAAAAJAAQAAAABACMAAAADAAAAAAACACMAAAADAAA
 tile_set = SubResource("TileSet_f4pg2")
 
 [node name="Background" type="ParallaxBackground" parent="."]
-script = ExtResource("2_rfktq")
+script = ExtResource("2_323c3")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
 motion_mirroring = Vector2(1151, 0)
@@ -412,12 +412,12 @@ motion_mirroring = Vector2(1151, 0)
 [node name="Sky" type="Sprite2D" parent="Background/ParallaxLayer"]
 position = Vector2(576.25, 322)
 scale = Vector2(3.59844, 2.00625)
-texture = ExtResource("3_0urlm")
+texture = ExtResource("3_i0khc")
 
 [node name="Sky2" type="Sprite2D" parent="Background/ParallaxLayer"]
 position = Vector2(2985, 323)
 scale = Vector2(4.29375, 2.01563)
-texture = ExtResource("3_0urlm")
+texture = ExtResource("3_i0khc")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
 motion_mirroring = Vector2(1293.5, 0)
@@ -425,44 +425,44 @@ motion_mirroring = Vector2(1293.5, 0)
 [node name="GrassMountains" type="Sprite2D" parent="Background/ParallaxLayer2"]
 position = Vector2(216.499, 294)
 scale = Vector2(1.35312, 1.7625)
-texture = ExtResource("4_77x7w")
+texture = ExtResource("4_amnh0")
 
 [node name="GrassMountains2" type="Sprite2D" parent="Background/ParallaxLayer2"]
 position = Vector2(643.999, 294)
 scale = Vector2(1.35312, 1.7625)
-texture = ExtResource("4_77x7w")
+texture = ExtResource("4_amnh0")
 
 [node name="GrassMountains3" type="Sprite2D" parent="Background/ParallaxLayer2"]
 position = Vector2(1077, 294)
 scale = Vector2(1.35312, 1.7625)
-texture = ExtResource("4_77x7w")
+texture = ExtResource("4_amnh0")
 
 [node name="DarkGreen" type="Sprite2D" parent="Background/ParallaxLayer2"]
 position = Vector2(1433, 1100.62)
 scale = Vector2(8.9125, 25.7256)
-texture = ExtResource("5_rfktq")
+texture = ExtResource("5_7xck5")
 
 [node name="GrassMountains4" type="Sprite2D" parent="Background/ParallaxLayer2"]
 position = Vector2(2892.5, 288.763)
 scale = Vector2(1.92188, 1.79852)
-texture = ExtResource("4_77x7w")
+texture = ExtResource("4_amnh0")
 
 [node name="GrassMountains5" type="Sprite2D" parent="Background/ParallaxLayer2"]
 position = Vector2(3489, 269)
 scale = Vector2(1.9625, 1.9375)
-texture = ExtResource("4_77x7w")
+texture = ExtResource("4_amnh0")
 
-[node name="Player" parent="." instance=ExtResource("1_n0qsc")]
+[node name="Player" parent="." instance=ExtResource("6_iept8")]
 position = Vector2(170, 421)
 
-[node name="HealthBarUI" parent="." instance=ExtResource("7_0urlm")]
+[node name="HealthBarUI" parent="." instance=ExtResource("7_du0bi")]
 
-[node name="Enemy1" parent="." instance=ExtResource("8_77x7w")]
+[node name="Enemy1" parent="." instance=ExtResource("8_2ioti")]
 position = Vector2(1134, 524)
-script = ExtResource("9_xoyoh")
+script = ExtResource("9_57i1m")
 
-[node name="EndTree" parent="." instance=ExtResource("10_62b6n")]
+[node name="EndTree" parent="." instance=ExtResource("10_vuoi4")]
 position = Vector2(96, 1221)
-script = ExtResource("11_rs4xw")
+script = ExtResource("11_xffek")
 
-[node name="PauseScreen" parent="." instance=ExtResource("6_77x7w")]
+[node name="PauseScreen" parent="." instance=ExtResource("12_tiuk7")]

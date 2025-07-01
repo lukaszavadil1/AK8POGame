@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dine7iwfupm88"]
 
-[ext_resource type="Script" uid="uid://d0ktkbleai2lx" path="res://Menu/controls_screen.gd" id="1_ih8mc"]
+[ext_resource type="Script" uid="uid://d0ktkbleai2lx" path="res://Scenes/controls_screen.gd" id="1_ih8mc"]
 [ext_resource type="PackedScene" uid="uid://ctddc52hguael" path="res://Background/Background.tscn" id="1_tdcuh"]
 
 [node name="ControlsUI" type="Node2D"]

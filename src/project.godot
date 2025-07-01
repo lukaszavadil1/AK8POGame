@@ -15,6 +15,10 @@ run/main_scene="uid://d12a1ghq0fg2r"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerStats="*res://Player/PlayerStats.gd"
+
 [input]
 
 ui_accept={
