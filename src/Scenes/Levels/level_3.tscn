@@ -468,11 +468,14 @@ position = Vector2(944, 668)
 script = ExtResource("12_md4x4")
 max_health = 100
 points_on_death = 4
+patrol_distance = 10.0
 
 [node name="Enemy2" parent="." instance=ExtResource("11_sy7oa")]
 position = Vector2(678, 924)
 script = ExtResource("12_md4x4")
+patrol_distance = 5.0
 
 [node name="Enemy3" parent="." instance=ExtResource("11_sy7oa")]
 position = Vector2(1907, 620)
 script = ExtResource("12_md4x4")
+patrol_distance = 10.0
