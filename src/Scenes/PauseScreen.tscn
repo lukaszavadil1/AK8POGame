@@ -20,9 +20,9 @@ text = "Restart level"
 
 [node name="BackToMenu" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 717.0
+offset_left = 736.0
 offset_top = 539.0
-offset_right = 860.0
+offset_right = 879.0
 offset_bottom = 586.0
 text = "Back to menu"
 

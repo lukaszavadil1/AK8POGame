@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-
+@onready var level_title_label = $Title
 @onready var upgrade_points_label = $UpgradePoints
 @onready var health_label = $Health
 @onready var attack_label = $Attack
@@ -17,6 +17,7 @@ func update_ui():
 	health_label.text = "Health: %d" % PlayerStats.base_health
 	attack_label.text = "Attack: %d" % PlayerStats.attack
 	stamina_label.text = "Stamina: %d" % PlayerStats.base_stamina
+	level_title_label.text = "Level %d completed!" % GameState.current_level
 	
 	var can_upgrade = PlayerStats.upgrade_points > 0
 	upgrade_health_button.disabled = not can_upgrade
