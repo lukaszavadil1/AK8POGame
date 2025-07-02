@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://chbaa0beslqiv"]
+[gd_scene load_steps=65 format=3 uid="uid://chbaa0beslqiv"]
 
 [ext_resource type="Texture2D" uid="uid://db3fahcs8v5kt" path="res://Assets/Graphics/Enemy1-assets/ATTACK 1.png" id="1_2y2af"]
 [ext_resource type="Texture2D" uid="uid://b716gqm0dxy4" path="res://Assets/Graphics/Enemy1-assets/IDLE.png" id="1_er5oi"]
@@ -407,12 +407,14 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 gradient = SubResource("Gradient_pypnh")
 width = 20
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y2af"]
+
 [node name="Enemy1" type="CharacterBody2D"]
 
 [node name="Enemy1Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_j3ny3")
-animation = &"Hurt"
+animation = &"Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -433,3 +435,11 @@ value = 50.0
 nine_patch_stretch = true
 texture_under = SubResource("GradientTexture1D_pypnh")
 texture_progress = SubResource("GradientTexture1D_j3ny3")
+
+[node name="AttackAreaEnemy" type="Area2D" parent="."]
+position = Vector2(-10, -20)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackAreaEnemy"]
+position = Vector2(20, 23)
+shape = SubResource("RectangleShape2D_2y2af")

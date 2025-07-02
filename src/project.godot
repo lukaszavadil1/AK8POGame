@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 PlayerStats="*res://Player/PlayerStats.gd"
 
+[global_group]
+
+Player=""
+
 [input]
 
 ui_accept={
