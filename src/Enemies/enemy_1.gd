@@ -124,4 +124,5 @@ func die() -> void:
 	enemy_animation.play("Death")
 	await enemy_animation.animation_finished
 	PlayerStats.add_points(points_on_death)
+	PlayerStats.kill_count += 1
 	queue_free()

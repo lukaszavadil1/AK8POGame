@@ -13,7 +13,7 @@ func update_stats_display():
 	health_label.text = "Health: %.0f/%.0f" % [PlayerStats.health, PlayerStats.base_health]
 	stamina_label.text = "Stamina: %.1f/%.1f" % [PlayerStats.stamina, PlayerStats.base_stamina]
 	attack_label.text = "Attack: %d" % PlayerStats.attack
-	upgrade_points_label.text = "Upgrade points: %d" % PlayerStats.upgrade_points
+	upgrade_points_label.text = "Upgrade points: %d (%d kills)" % [PlayerStats.upgrade_points, PlayerStats.kill_count]
 	
 
 func _unhandled_input(event: InputEvent) -> void:
