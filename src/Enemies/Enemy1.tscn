@@ -400,6 +400,7 @@ gradient = SubResource("Gradient_pypnh")
 width = 20
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y2af"]
+size = Vector2(29, 20)
 
 [node name="Enemy1" type="CharacterBody2D"]
 
@@ -428,5 +429,5 @@ position = Vector2(-10, -20)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackAreaEnemy"]
-position = Vector2(20, 23)
+position = Vector2(22.5, 23)
 shape = SubResource("RectangleShape2D_2y2af")

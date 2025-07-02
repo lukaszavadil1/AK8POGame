@@ -13,8 +13,8 @@ const GRAVITY = 1200.0
 @export var speed: float = 80.0
 @export var patrol_distance: float = 100.0
 @export var chase_range: float = 200.0
-@export var attack_range: float = 40.0
-@export var attack_damage: int = 10
+@export var attack_range: float = 30.0
+@export var attack_damage: int = 20
 @export var attack_cooldown: float = 1.2
 
 var patrol_origin: Vector2
