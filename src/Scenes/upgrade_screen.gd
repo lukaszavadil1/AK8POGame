@@ -23,34 +23,32 @@ func update_ui():
 	upgrade_attack_button.disabled = not can_upgrade
 	upgrade_stamina_button.disabled = not can_upgrade
 
+func try_upgrade(stat: String, amount: float):
+	if PlayerStats.upgrade_points > 0:
+		match stat:
+			"health":
+				PlayerStats.base_health += amount
+				PlayerStats.health = PlayerStats.base_health
+			"stamina":
+				PlayerStats.base_stamina += amount
+				PlayerStats.stamina = PlayerStats.base_stamina
+			"attack":
+				PlayerStats.attack += amount
+		PlayerStats.upgrade_points -= 1
+		update_ui()
 
 func _on_upgrade_health_pressed() -> void:
-	if PlayerStats.upgrade_points > 0:
-		PlayerStats.base_health += 10
-		PlayerStats.health = PlayerStats.base_health
-		PlayerStats.upgrade_points -= 1
-		update_ui()
-
+	try_upgrade("health", 10)
 
 func _on_upgrade_stamina_pressed() -> void:
-	if PlayerStats.upgrade_points > 0:
-		PlayerStats.base_stamina += 5
-		PlayerStats.stamina = PlayerStats.base_stamina
-		PlayerStats.upgrade_points -= 1
-		update_ui()
-
+	try_upgrade("stamina", 5)
 
 func _on_upgrade_attack_pressed() -> void:
-	if PlayerStats.upgrade_points > 0:
-		PlayerStats.attack += 2
-		PlayerStats.upgrade_points -= 1
-		update_ui()
-
+	try_upgrade("attack", 2)
 
 func _on_back_to_menu_pressed() -> void:
 	PlayerStats.reset()
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
-
 
 func _on_next_level_pressed() -> void:
 	get_tree().change_scene_to_file(GameState.get_next_level_path())
