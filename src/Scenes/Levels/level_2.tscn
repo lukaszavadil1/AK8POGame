@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://4gahw3i0cfrb"]
+[gd_scene load_steps=15 format=4 uid="uid://4gahw3i0cfrb"]
 
 [ext_resource type="Script" uid="uid://cvl2kjgd6ee40" path="res://Background/background.gd" id="1_8qsmg"]
 [ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Assets/Graphics/Background-assets/Sky.png" id="2_fphuk"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="5_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="6_u40f0"]
 [ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="7_pnnky"]
-[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="8_blpqv"]
+[ext_resource type="Script" uid="uid://plo2epf23ol8" path="res://Assets/EndTree/EbdTree.gd" id="8_blpqv"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="9_1jlnc"]
 [ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Scenes/PauseScreen.tscn" id="10_u40f0"]
+[ext_resource type="PackedScene" uid="uid://chbaa0beslqiv" path="res://Enemies/Enemy1.tscn" id="11_0x4y1"]
+[ext_resource type="Script" uid="uid://cf6okgw5sp11w" path="res://Enemies/enemy_1.gd" id="12_uqiic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jlnc"]
 texture = ExtResource("5_1jlnc")
@@ -460,3 +462,19 @@ script = ExtResource("8_blpqv")
 [node name="HealthBarUI" parent="." instance=ExtResource("9_1jlnc")]
 
 [node name="PauseScreen" parent="." instance=ExtResource("10_u40f0")]
+
+[node name="Enemy1" parent="." instance=ExtResource("11_0x4y1")]
+position = Vector2(2447, 1151)
+script = ExtResource("12_uqiic")
+max_health = 200
+points_on_death = 10
+attack_damage = 40
+
+[node name="Enemy2" parent="." instance=ExtResource("11_0x4y1")]
+position = Vector2(487, 1244)
+script = ExtResource("12_uqiic")
+
+[node name="Enemy3" parent="." instance=ExtResource("11_0x4y1")]
+position = Vector2(839, 941)
+script = ExtResource("12_uqiic")
+max_health = 75

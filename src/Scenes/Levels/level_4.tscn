@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="5_3osng"]
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="6_eb4ip"]
 [ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="7_ecora"]
-[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="8_xpmn3"]
+[ext_resource type="Script" uid="uid://plo2epf23ol8" path="res://Assets/EndTree/EbdTree.gd" id="8_xpmn3"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="9_33y7k"]
 [ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Scenes/PauseScreen.tscn" id="10_khr6i"]
 
