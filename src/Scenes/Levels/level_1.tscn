@@ -466,3 +466,9 @@ position = Vector2(96, 1221)
 script = ExtResource("11_xffek")
 
 [node name="PauseScreen" parent="." instance=ExtResource("12_tiuk7")]
+
+[node name="Enemy2" parent="." instance=ExtResource("8_2ioti")]
+position = Vector2(3499, 895)
+script = ExtResource("9_57i1m")
+max_health = 150
+points_on_death = 6

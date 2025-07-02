@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-const MAX_HEALTH = 50
-var current_health = MAX_HEALTH
+@export var max_health: int = 50
+@export var points_on_death: int = 2
+var current_health: int
 var is_dead = false
 const GRAVITY = 1200.0 
 
@@ -10,12 +11,12 @@ const GRAVITY = 1200.0
 @onready var health_bar = $HealthBar
 
 func _ready() -> void:
+	current_health = max_health
 	update_health_bar()
 	enemy_animation.play("Idle")
 	enemy_animation.animation_finished.connect(_on_animation_finished)
 
 func _on_animation_finished() -> void:
-	# You can't get the animation name here, so check the current animation manually
 	if enemy_animation.animation == "Hurt" and not is_dead:
 		enemy_animation.play("Idle")
 
@@ -32,6 +33,7 @@ func take_damage(amount: int) -> void:
 		enemy_animation.play("Hurt")
 
 func update_health_bar() -> void:
+	health_bar.max_value = max_health
 	health_bar.value = current_health
 
 func _physics_process(delta: float) -> void:
@@ -49,5 +51,5 @@ func die() -> void:
 	is_dead = true
 	enemy_animation.play("Death")
 	await enemy_animation.animation_finished
-	PlayerStats.add_points(2)
+	PlayerStats.add_points(points_on_death)
 	queue_free()
