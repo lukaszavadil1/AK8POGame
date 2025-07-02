@@ -40,6 +40,8 @@ func _ready() -> void:
 func _on_animation_finished() -> void:
 	if enemy_animation.animation == "Hurt" and not is_dead:
 		enemy_animation.play("Idle")
+	elif enemy_animation.animation == "Attack_1" and not is_dead:
+		enemy_animation.play("Walk")
 
 func take_damage(amount: int) -> void:
 	if is_dead:

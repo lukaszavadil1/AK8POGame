@@ -221,7 +221,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iih3s")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack_1",
 "speed": 5.0
 }, {
@@ -414,7 +414,7 @@ width = 20
 [node name="Enemy1Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_j3ny3")
-animation = &"Walk"
+animation = &"Attack_1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
