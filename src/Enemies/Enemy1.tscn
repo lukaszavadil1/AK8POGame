@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://chbaa0beslqiv"]
+[gd_scene load_steps=63 format=3 uid="uid://chbaa0beslqiv"]
 
 [ext_resource type="Texture2D" uid="uid://db3fahcs8v5kt" path="res://Assets/Graphics/Enemy1-assets/ATTACK 1.png" id="1_2y2af"]
 [ext_resource type="Texture2D" uid="uid://b716gqm0dxy4" path="res://Assets/Graphics/Enemy1-assets/IDLE.png" id="1_er5oi"]
@@ -385,14 +385,6 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe0di"]
 radius = 9.0
 
-[sub_resource type="Animation" id="Animation_2y2af"]
-resource_name = "Hurt"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pypnh"]
-_data = {
-&"Hurt": SubResource("Animation_2y2af")
-}
-
 [sub_resource type="Gradient" id="Gradient_2y2af"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
@@ -419,11 +411,6 @@ animation = &"Attack_1"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_oe0di")
-
-[node name="EnemyAnimation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pypnh")
-}
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 offset_left = -10.0
