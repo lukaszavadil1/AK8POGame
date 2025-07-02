@@ -53,4 +53,4 @@ func _on_back_to_menu_pressed() -> void:
 
 
 func _on_next_level_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
+	get_tree().change_scene_to_file(GameState.get_next_level_path())
