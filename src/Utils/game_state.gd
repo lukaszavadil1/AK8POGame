@@ -1,7 +1,7 @@
 extends Node
 
 var current_level: int = 1
-const TOTAL_LEVELS: int = 2
+const TOTAL_LEVELS: int = 5
 
 func get_next_level_path() -> String:
 	if is_final_level():
