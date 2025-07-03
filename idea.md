@@ -1,36 +1,60 @@
 # AK8POGame
 
 ## Popis
-Akční plošinová hra se strategickými prvky, kde je cílem hráčem ovládaného samuraje projít všemi levely.
+Akční plošinová hra se strategickými prvky, kde hráč ovládá samuraje, který musí projít všemi levely, porazit nepřátele a nakonec i finálního bosse.
 
 ## Detailní popis
-Hráčem ovládaná postava samuraje má za úkol projít všechny levely a na konci porazit finálního nepřítele.
+Hráč ovládá postavu samuraje s unikátními schopnostmi. Hra kombinuje prvky plošinovky s taktickým bojem, kde každý úkon spotřebovává vyčerpatelnou výdrž (staminu).
 
 ## Zařazení hry
-Akční, strategická, 2D
+**Žánr:** Akční, strategická, 2D plošinovka
 
-## Úvod do prostředí, charaktery, ...
+**Cílová skupina:** Hráči 12-35 let, fanoušci náročnějších platformerů
 
-## Struktura hry
+**Platforma:** PC
 
-### Ovládání
-Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný šipkami, dále je podporován skok šipkou nahoru a útok stisknutím mezerníku.
+## Herní svět a postavy
+**Prostředí:** Kouzelný les
 
-### Nepřátelé
+**Hlavní postava:** Ronin nazývaný Hiroshi
+
+**Schopnosti:** Útok mečem, skok, sprint
+
+**Zvláštnost:** Hra klade důraz na přesnost, vlastnost velmi důležitou pro 
+samuraje. Zasažením nepřítele dojde k doplnění menšího množství staminy, v opačném případě dojde k ubrání části životů hráče.
+
+**Nepřátelé:** 
+
+Pěšáci - základní typ nepřátel, liší se množstvím životů
+
+Boss - finální nepřítel
+
+## Ovládání
+Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný šipkami, dále je podporován skok šipkou nahoru a útok stisknutím mezerníku. Stistknutím P, nebo Esc se zobrazí obrazovka pozastavení hry, kde je možné vidět aktuální statistiku hráče. Nabízí také možnost restartování levelu, nebo návrat na úvodní obrazovku.
 
 ## Herní mechaniky
 
 ### Útok
 ![Utok](mechanics\attack.png)
 
+### Smrt hráče
+![Smrt](mechanics\death.png)
+
 ## Grafické prvky a zvuky
+Všechny grafické prvky a zvuky se nachází v adresáři Assets ve zdrojovém adresáři projektu src. Grafika je ve stylu pixel artu a všechny postavy mají přiřazeny různé animace k akcím, které provádějí (pohyb, útok, poškození).
+
+<!-- TODO ADD SOUNDS -->
 
 ## Přehled levelů
+Hra obsahuje 5 levelů, v prvních 4 levelech jsou rozmístěni pěšáci a v posledním je finální boss.
 
-## Návrh UI - menu, pauza, nastavení, ...
+<!-- TODO ADD LEVEL DESIGN LAYOUTS -->
 
-## Nástroje použité při vývoji
-Godot, Git
+## Technologie použité při vývoji
+Godot 4 - engine pro vývoj hry
+Git - verzování projektu a spolupráce
+Lucidchart - návrh diagramů herních mechanik
+Discord - komunikace
 
 ## Tým
 Josef Susík - vývojář, projektový manažer, designér
