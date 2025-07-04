@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="5_gqyih"]
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="6_srugb"]
 [ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="7_vdq4f"]
-[ext_resource type="Script" uid="uid://plo2epf23ol8" path="res://Assets/EndTree/EbdTree.gd" id="8_633d5"]
+[ext_resource type="Script" uid="uid://2kfh32vdh4hm" path="res://Assets/EndTree/EbdTree.gd" id="8_633d5"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="9_rw7sn"]
 [ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Scenes/PauseScreen.tscn" id="10_27vqw"]
 [ext_resource type="PackedScene" uid="uid://bm8ur0hfg2twt" path="res://Enemies/Boss.tscn" id="11_3koi7"]
-[ext_resource type="Script" uid="uid://nw8eco1rudvy" path="res://Enemies/boss.gd" id="12_20kd1"]
+[ext_resource type="Script" uid="uid://cxiwkkk0sh08" path="res://Enemies/boss.gd" id="12_20kd1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jd0ia"]
 texture = ExtResource("5_gqyih")

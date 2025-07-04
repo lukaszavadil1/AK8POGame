@@ -129,4 +129,4 @@ func die() -> void:
 	call_deferred("_change_scene")
 
 func _change_scene():
-	get_tree().change_scene_to_file("res://Scenes/UpgradeScreen.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GameOverScreen.tscn")

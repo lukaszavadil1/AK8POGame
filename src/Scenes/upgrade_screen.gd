@@ -5,15 +5,19 @@ extends CanvasLayer
 @onready var health_label = $Health
 @onready var attack_label = $Attack
 @onready var stamina_label = $Stamina
+@onready var level_time_label = $LevelTime
+@onready var total_time_label = $TotalTime
 @onready var upgrade_health_button = $UpgradeHealth
 @onready var upgrade_attack_button = $UpgradeAttack
 @onready var upgrade_stamina_button = $UpgradeStamina
 
 func _ready():
 	update_ui()
+	level_time_label.text = "Level Time: " + GameState.format_time(GameState.level_completion_time)
+	total_time_label.text = "Total Time: " + GameState.format_time(GameState.total_run_time)
 
 func update_ui():
-	upgrade_points_label.text = "Upgrade Points left: %d" % PlayerStats.upgrade_points
+	upgrade_points_label.text = "Upgrade points: %d (%d kills)" % [PlayerStats.upgrade_points, PlayerStats.kill_count]
 	health_label.text = "Health: %d" % PlayerStats.base_health
 	attack_label.text = "Attack: %d" % PlayerStats.attack
 	stamina_label.text = "Stamina: %d" % PlayerStats.base_stamina
@@ -49,7 +53,9 @@ func _on_upgrade_attack_pressed() -> void:
 
 func _on_back_to_menu_pressed() -> void:
 	PlayerStats.reset()
+	GameState.reset()
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 
 func _on_next_level_pressed() -> void:
+	GameState.level_start_time = Time.get_ticks_msec()
 	get_tree().change_scene_to_file(GameState.get_next_level_path())
