@@ -9,7 +9,7 @@
 script = ExtResource("1_jqsg2")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(1151, 0)
+motion_mirroring = Vector2(1150, 0)
 
 [node name="Sky" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(577, 321)

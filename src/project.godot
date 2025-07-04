@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerState="*res://Player/player_state.gd"
 GameState="*res://Utils/game_state.gd"
+MusicManager="*res://Utils/music_manager.gd"
 
 [global_group]
 
