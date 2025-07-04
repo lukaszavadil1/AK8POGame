@@ -1,15 +1,5 @@
 extends CharacterBody2D
 
-# Movement settings
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-# Combat settings
-const STAMINA_REGEN_RATE = 1.0
-const STAMINA_ON_HIT = 2.0
-const ATTACK_COST = 5.0
-const ATTACK_AREA_OFFSET_X = 32
-
 # Nodes
 @onready var anim = $PlayerAnimation
 @onready var sprite = $PlayerAnimatedSprite
@@ -17,19 +7,15 @@ const ATTACK_AREA_OFFSET_X = 32
 @onready var attack_area = $AttackArea
 @onready var health_bar = $"../HealthBarUI"
 
-# States
-var is_attacking = false
-var is_jumping = false
-var is_hurt = false
 var take_self_damage = false
 
 func _ready() -> void:
-	PlayerStats.health = PlayerStats.base_health
-	PlayerStats.stamina = PlayerStats.base_stamina
+	PlayerState.reset()
 	anim.animation_finished.connect(_on_animation_finished)
 
 func _process(delta: float) -> void:
-	regenerate_stamina(delta)
+	PlayerState.regenerate_stamina(delta)
+	stamina_bar.update_stamina(PlayerState.stamina, PlayerState.base_stamina)
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
@@ -43,11 +29,11 @@ func apply_gravity(delta: float) -> void:
 	if was_jumping:
 		velocity += get_gravity() * delta
 	
-	if was_jumping and is_on_floor():
-		is_jumping = false
+	if was_jumping and is_on_floor() and PlayerState.is_state(PlayerState.State.JUMPING):
+		PlayerState.change_state(PlayerState.State.IDLE)
 			
 func handle_movement() -> void:
-	if is_attacking or is_hurt:
+	if PlayerState.is_invulnerable() and not PlayerState.is_state(PlayerState.State.JUMPING):
 		return
 		
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -57,27 +43,33 @@ func handle_movement() -> void:
 
 func handle_horizontal_movement(direction: float) -> void:
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * PlayerState.SPEED
 		sprite.flip_h = direction < 0
-		attack_area.position.x = ATTACK_AREA_OFFSET_X * (-1 if sprite.flip_h else 1)
+		attack_area.position.x = PlayerState.ATTACK_AREA_OFFSET_X * (-1 if sprite.flip_h else 1)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, PlayerState.SPEED)
 		
 func handle_jump() -> void:
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		is_jumping = true
+		velocity.y = PlayerState.JUMP_VELOCITY
+		PlayerState.change_state(PlayerState.State.JUMPING)
 		
 func handle_movement_animation(direction: float) -> void:
 	if direction != 0 or not is_on_floor():
-		anim.play("Run")
+		if not PlayerState.is_state(PlayerState.State.MOVING):
+			PlayerState.change_state(PlayerState.State.MOVING)
+		if not anim.current_animation == "Run":
+			anim.play("Run")
 	else:
-		anim.play("Idle")
+		if not PlayerState.is_state(PlayerState.State.IDLE):
+			PlayerState.change_state(PlayerState.State.IDLE)
+		if not anim.current_animation == "Idle":
+			anim.play("Idle")
 
 func handle_attack() -> void:
 	if Input.is_action_just_pressed("ui_accept") and can_attack():
-		consume_stamina(ATTACK_COST)
-		is_attacking = true
+		PlayerState.consume_stamina(PlayerState.ATTACK_COST)
+		PlayerState.change_state(PlayerState.State.ATTACKING)
 		perform_attack()
 
 func perform_attack() -> void:
@@ -85,10 +77,10 @@ func perform_attack() -> void:
 	var hit = false
 	for body in attack_area.get_overlapping_bodies():
 		if body.has_method("take_damage"):
-			body.take_damage(PlayerStats.attack)
+			body.take_damage(PlayerState.attack)
 			# Reward for landing a precise hit
-			PlayerStats.stamina = min(PlayerStats.stamina + STAMINA_ON_HIT, PlayerStats.base_stamina)
-			stamina_bar.update_stamina(PlayerStats.stamina, PlayerStats.base_stamina)
+			PlayerState.stamina = min(PlayerState.stamina + PlayerState.STAMINA_ON_HIT, PlayerState.base_stamina)
+			stamina_bar.update_stamina(PlayerState.stamina, PlayerState.base_stamina)
 			hit = true
 			return
 	# Real samurai needs to be precise
@@ -96,45 +88,43 @@ func perform_attack() -> void:
 		take_self_damage = true
 
 func can_attack() -> bool:
-	return (PlayerStats.stamina >= ATTACK_COST) and not is_attacking
-
-func consume_stamina(amount: float) -> void:
-	PlayerStats.stamina = max(PlayerStats.stamina - amount, 0)
-	stamina_bar.update_stamina(PlayerStats.stamina, PlayerStats.base_stamina)
-
-func regenerate_stamina(delta: float) -> void:
-	if not is_attacking and PlayerStats.stamina < PlayerStats.base_stamina:
-		PlayerStats.stamina = min(PlayerStats.stamina + STAMINA_REGEN_RATE * delta, PlayerStats.base_stamina)
-		stamina_bar.update_stamina(PlayerStats.stamina, PlayerStats.base_stamina)
+	return (PlayerState.stamina >= PlayerState.ATTACK_COST) and not PlayerState.is_state(PlayerState.State.ATTACKING)
 
 func _on_animation_finished(anim_name) -> void:
 	match anim_name:
 		"Attack":
-			is_attacking = false
-			is_hurt = false
 			if take_self_damage:
 				take_self_damage = false
-				lose_health(PlayerStats.attack)
+				lose_health(PlayerState.attack)
+				
+			var direction = Input.get_axis("ui_left", "ui_right")
+			if direction != 0:
+				PlayerState.change_state(PlayerState.State.MOVING)
+				anim.play("Run")
+			else:
+				PlayerState.change_state(PlayerState.State.IDLE)
+				anim.play("Idle")
+				
 		"Hurt":
-			is_hurt = false
-			is_attacking = false
+			var direction = Input.get_axis("ui_left", "ui_right")
+			if direction != 0:
+				PlayerState.change_state(PlayerState.State.MOVING)
+				anim.play("Run")
+			else:
+				PlayerState.change_state(PlayerState.State.IDLE)
+				anim.play("Idle")
 
 func lose_health(amount: float) -> void:
-	if is_hurt or is_attacking:
-		return
-		
-	PlayerStats.health = max(PlayerStats.health - amount, 0)
-	health_bar.update_health(PlayerStats.health, PlayerStats.base_health)
+	PlayerState.health = max(PlayerState.health - amount, 0)
+	health_bar.update_health(PlayerState.health, PlayerState.base_health)
 	
-	if PlayerStats.health <= 0:
+	if PlayerState.health <= 0:
 		die()
 	else:
-		is_hurt = true
+		PlayerState.change_state(PlayerState.State.HURT)
 		anim.play("Hurt")
 		
 func die() -> void:
-	PlayerStats.reset()
-	call_deferred("_change_scene")
-	
-func _change_scene() -> void:
+	PlayerState.reset()
+	await get_tree().process_frame
 	get_tree().reload_current_scene()

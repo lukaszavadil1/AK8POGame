@@ -13,13 +13,14 @@ func _ready():
 	total_time_label.text = "Total Time: " + GameState.format_time(GameState.total_run_time)
 
 func update_ui():
-	kills_label.text = "Total kills: %d" % PlayerStats.kill_count
-	health_label.text = "Health: %d" % PlayerStats.base_health
-	attack_label.text = "Attack: %d" % PlayerStats.attack
-	stamina_label.text = "Stamina: %d" % PlayerStats.base_stamina
+	kills_label.text = "Total kills: %d" % PlayerState.kill_count
+	health_label.text = "Health: %d" % PlayerState.base_health
+	attack_label.text = "Attack: %d" % PlayerState.attack
+	stamina_label.text = "Stamina: %d" % PlayerState.base_stamina
 
 func _on_back_to_menu_pressed() -> void:
-	PlayerStats.reset()
+	GameState.reset()
+	PlayerState.reset()
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 
 func _on_quit_pressed() -> void:

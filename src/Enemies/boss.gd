@@ -123,10 +123,8 @@ func die() -> void:
 	is_dead = true
 	enemy_animation.play("Death")
 	await enemy_animation.animation_finished
-	PlayerStats.add_points(points_on_death)
-	PlayerStats.kill_count += 1
+	PlayerState.add_points(points_on_death)
+	PlayerState.kill_count += 1
 	queue_free()
-	call_deferred("_change_scene")
-
-func _change_scene():
+	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://Scenes/GameOverScreen.tscn")

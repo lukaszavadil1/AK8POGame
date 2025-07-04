@@ -10,11 +10,10 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func update_stats_display():
-	health_label.text = "Health: %.0f/%.0f" % [PlayerStats.health, PlayerStats.base_health]
-	stamina_label.text = "Stamina: %.1f/%.1f" % [PlayerStats.stamina, PlayerStats.base_stamina]
-	attack_label.text = "Attack: %d" % PlayerStats.attack
-	upgrade_points_label.text = "Upgrade points: %d (%d kills)" % [PlayerStats.upgrade_points, PlayerStats.kill_count]
-	
+	health_label.text = "Health: %.0f/%.0f" % [PlayerState.health, PlayerState.base_health]
+	stamina_label.text = "Stamina: %.1f/%.1f" % [PlayerState.stamina, PlayerState.base_stamina]
+	attack_label.text = "Attack: %d" % PlayerState.attack
+	upgrade_points_label.text = "Upgrade points: %d (%d kills)" % [PlayerState.upgrade_points, PlayerState.kill_count]
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and (event.keycode == KEY_P or event.keycode == KEY_ESCAPE):
@@ -37,8 +36,8 @@ func _on_restart_pressed() -> void:
 	_resume_game()
 	get_tree().reload_current_scene()
 
-
 func _on_back_to_menu_pressed() -> void:
 	_resume_game()
-	PlayerStats.reset()
+	PlayerState.reset()
+	GameState.reset()
 	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
