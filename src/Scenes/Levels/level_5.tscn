@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ml70bquiwdas"]
+[gd_scene load_steps=14 format=4 uid="uid://ml70bquiwdas"]
 
 [ext_resource type="Script" uid="uid://cvl2kjgd6ee40" path="res://Background/background.gd" id="1_0fyhm"]
 [ext_resource type="Script" uid="uid://bw5ljvldg5v02" path="res://Scenes/Levels/level_5.gd" id="1_20kd1"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bgbesxvo2nj5l" path="res://Assets/Graphics/Background-assets/DarkGreen.png" id="4_20kd1"]
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="5_gqyih"]
 [ext_resource type="PackedScene" uid="uid://cgvx2krfwaorl" path="res://Player/Player.tscn" id="6_srugb"]
-[ext_resource type="PackedScene" uid="uid://cwv6rv1rxxbe6" path="res://Assets/EndTree/EndTree.tscn" id="7_vdq4f"]
-[ext_resource type="Script" uid="uid://plo2epf23ol8" path="res://Assets/EndTree/EbdTree.gd" id="8_633d5"]
 [ext_resource type="PackedScene" uid="uid://b0vyw0u2jp2wd" path="res://Utils/HealthBar.tscn" id="9_rw7sn"]
 [ext_resource type="PackedScene" uid="uid://bq36n3y4875t1" path="res://Scenes/PauseScreen.tscn" id="10_27vqw"]
 [ext_resource type="PackedScene" uid="uid://bm8ur0hfg2twt" path="res://Enemies/Boss.tscn" id="11_3koi7"]
@@ -457,10 +455,6 @@ tile_set = SubResource("TileSet_b7yer")
 [node name="Player" parent="." instance=ExtResource("6_srugb")]
 position = Vector2(275, 1011)
 
-[node name="EndTree" parent="." instance=ExtResource("7_vdq4f")]
-position = Vector2(3425, 1128)
-script = ExtResource("8_633d5")
-
 [node name="HealthBarUI" parent="." instance=ExtResource("9_rw7sn")]
 
 [node name="PauseScreen" parent="." instance=ExtResource("10_27vqw")]
@@ -468,6 +462,6 @@ script = ExtResource("8_633d5")
 [node name="Boss" parent="." instance=ExtResource("11_3koi7")]
 position = Vector2(805, 1106)
 script = ExtResource("12_20kd1")
-max_health = 10
+max_health = 100
 attack_damage = 40
 attack_cooldown = 3.0
