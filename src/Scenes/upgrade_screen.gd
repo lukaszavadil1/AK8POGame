@@ -12,9 +12,8 @@ extends CanvasLayer
 @onready var upgrade_stamina_button = $UpgradeStamina
 
 func _ready():
+	PlayerState.upgrade_points += GameState.current_level
 	update_ui()
-	level_time_label.text = "Level Time: " + GameState.format_time(GameState.level_completion_time)
-	total_time_label.text = "Total Time: " + GameState.format_time(GameState.total_run_time)
 	PlayerState.stamina = PlayerState.base_stamina
 	PlayerState.health = PlayerState.base_health
 
@@ -24,6 +23,8 @@ func update_ui():
 	attack_label.text = "Attack: %d" % PlayerState.attack
 	stamina_label.text = "Stamina: %d" % PlayerState.base_stamina
 	level_title_label.text = "Level %d completed!" % GameState.current_level
+	level_time_label.text = "Level Time: " + GameState.format_time(GameState.level_completion_time)
+	total_time_label.text = "Total Time: " + GameState.format_time(GameState.total_run_time)
 	
 	var can_upgrade = PlayerState.upgrade_points > 0
 	upgrade_health_button.disabled = not can_upgrade

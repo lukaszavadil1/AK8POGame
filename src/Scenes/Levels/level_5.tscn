@@ -462,10 +462,8 @@ position = Vector2(3425, 1128)
 script = ExtResource("8_633d5")
 
 [node name="HealthBarUI" parent="." instance=ExtResource("9_rw7sn")]
-visible = false
 
 [node name="PauseScreen" parent="." instance=ExtResource("10_27vqw")]
-visible = false
 
 [node name="Boss" parent="." instance=ExtResource("11_3koi7")]
 position = Vector2(805, 1106)

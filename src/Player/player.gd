@@ -10,6 +10,7 @@ extends CharacterBody2D
 var take_self_damage = false
 
 func _ready() -> void:
+	PlayerState.respawn()
 	anim.animation_finished.connect(_on_animation_finished)
 
 func _process(delta: float) -> void:

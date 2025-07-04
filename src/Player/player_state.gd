@@ -40,6 +40,13 @@ func reset():
 	kill_count = 0
 	current_state = State.IDLE
 	previous_state = State.IDLE
+	
+func respawn():
+	health = base_health
+	stamina = base_stamina
+	current_state = State.IDLE
+	previous_state = State.IDLE
+	upgrade_points = 0
 
 func add_points(points: int) -> void:
 	upgrade_points += points

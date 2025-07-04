@@ -34,14 +34,18 @@ Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný š
 
 ## Herní mechaniky
 
-### Útok
+### Snížení životů hráče
 ![Utok](mechanics\attack.png)
 
 ### Smrt hráče
 ![Smrt](mechanics\death.png)
 
+### Získávání bodů vylepšení
+
 ### Vylepšení hráče
 ![Vylepseni](mechanics\upgrade.png)
+
+
 
 
 ## Grafické prvky a zvuky
