@@ -1,10 +1,10 @@
 # AK8POGame
 
 ## Popis
-Akční plošinová hra se strategickými prvky, kde hráč ovládá samuraje, který musí projít všemi levely, porazit nepřátele a nakonec i finálního bosse.
+Akční plošinová hra se strategickými prvky, kde hráč ovládá samuraje, který musí projít všemi levely, v cestě mu stojí vojáci pěchoty a cíl je chráněn jejím velitelem.
 
 ## Detailní popis
-Hráč ovládá postavu samuraje s unikátními schopnostmi. Hra kombinuje prvky plošinovky s taktickým bojem, kde každý úkon spotřebovává vyčerpatelnou výdrž (staminu). Zabíjením nepřátel hráč získává body, které může využít k vylepšení svých schopností a zvýšení svých šancí na úspěch v soubojích.
+Hráč ovládá postavu samuraje s unikátními schopnostmi. Hra kombinuje prvky plošinovky s taktickým bojem, kde každý úkon spotřebovává vyčerpatelnou výdrž (staminu). Zabíjením nepřátel hráč získává body, které může využít k vylepšení svých schopností a zvýšení svých šancí na úspěch v soubojích. Musí tedy přemýšlet, do čeho se mu nejvíce vyplatí investovat body vylepšení - např. velké poškození sice porazí nepřátele rychle, ale stejně tak dokáže rychle zabít hráče, pokud není při útoku dostatečně precizní.
 
 ## Zařazení hry
 **Žánr:** Akční, strategická, 2D plošinovka
@@ -40,13 +40,14 @@ Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný š
 ### Smrt hráče
 ![Smrt](mechanics\death.png)
 
-### Získávání bodů vylepšení
+### Systém bodů vylepšení
+![SystemBoduVylepseni](mechanics\point_system.png)
 
 ### Vylepšení hráče
 ![Vylepseni](mechanics\upgrade.png)
 
-
-
+## Výdrž
+![Vydrz](mechanics\stamina.png)
 
 ## Grafické prvky a zvuky
 Všechny grafické prvky a zvuky se nachází v adresáři Assets ve zdrojovém adresáři projektu src. Grafika je ve stylu pixel artu a všechny postavy mají přiřazeny různé animace k akcím, které provádějí (pohyb, útok, poškození). Hráče skrze levely provází energetická hudba v duchu hudebního stylu 8-bit (chiptune), která přirozeně doplňuje atmosféru poskytovanou grafickým stylem hry. Odkazy na použité grafické a hudební prvky je možné najít v souboru resources.md v kořenovém adresáři projektu.
