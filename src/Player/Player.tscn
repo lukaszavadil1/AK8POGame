@@ -444,7 +444,7 @@ shape = SubResource("CapsuleShape2D_q3lat")
 [node name="PlayerAnimatedSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -18)
 sprite_frames = SubResource("SpriteFrames_0j2ni")
-animation = &"Hurt"
+animation = &"Attack"
 frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]

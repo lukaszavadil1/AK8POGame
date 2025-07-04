@@ -1,12 +1,7 @@
 extends Node2D
 
-@onready var music_player = $MenuMusicPlayer
-
 func _ready() -> void:
 	MusicManager.play_music(load("res://Assets/Sounds/Happy Trails higher.wav"))
-	
-func _on_music_finished() -> void:
-	music_player.play()
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

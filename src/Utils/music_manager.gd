@@ -18,6 +18,3 @@ func play_music(music: AudioStream):
 
 func _on_finished():
 	audio_player.play()
-
-func set_volume(db: float):
-	audio_player.volume_db = db

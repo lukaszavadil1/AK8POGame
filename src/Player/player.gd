@@ -10,7 +10,6 @@ extends CharacterBody2D
 var take_self_damage = false
 
 func _ready() -> void:
-	PlayerState.reset()
 	anim.animation_finished.connect(_on_animation_finished)
 
 func _process(delta: float) -> void:
@@ -125,6 +124,5 @@ func lose_health(amount: float) -> void:
 		anim.play("Hurt")
 		
 func die() -> void:
-	PlayerState.reset()
 	await get_tree().process_frame
 	get_tree().reload_current_scene()

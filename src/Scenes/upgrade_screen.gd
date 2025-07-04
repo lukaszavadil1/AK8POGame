@@ -33,12 +33,13 @@ func try_upgrade(stat: String, amount: float):
 		match stat:
 			"health":
 				PlayerState.base_health += amount
-				PlayerState.health = PlayerState.base_health
 			"stamina":
 				PlayerState.base_stamina += amount
-				PlayerState.stamina = PlayerState.base_stamina
 			"attack":
 				PlayerState.attack += amount
+
+		PlayerState.stamina = PlayerState.base_stamina
+		PlayerState.health = PlayerState.base_health
 		PlayerState.upgrade_points -= 1
 		update_ui()
 

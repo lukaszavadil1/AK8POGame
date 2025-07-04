@@ -30,8 +30,6 @@ text = "Quit"
 
 [node name="Background" parent="." instance=ExtResource("2_0xm2m")]
 
-[node name="MenuMusicPlayer" type="AudioStreamPlayer" parent="."]
-
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

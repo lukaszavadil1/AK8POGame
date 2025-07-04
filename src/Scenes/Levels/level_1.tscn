@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://bde7wamg83agw"]
+[gd_scene load_steps=16 format=4 uid="uid://bde7wamg83agw"]
 
+[ext_resource type="Script" uid="uid://dmeaeoikbnmm4" path="res://Scenes/Levels/level_1.gd" id="1_7r2dd"]
 [ext_resource type="Texture2D" uid="uid://c843f4bcfeco6" path="res://Assets/Graphics/Tile-assets/Tileset Outside.png" id="1_hvtee"]
 [ext_resource type="Script" uid="uid://cvl2kjgd6ee40" path="res://Background/background.gd" id="2_323c3"]
 [ext_resource type="Texture2D" uid="uid://4jky60yh7nxj" path="res://Assets/Graphics/Background-assets/Sky.png" id="3_i0khc"]
@@ -397,6 +398,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_afv7b")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_7r2dd")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(2, 0)

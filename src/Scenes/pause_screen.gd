@@ -34,6 +34,8 @@ func _resume_game() -> void:
 
 func _on_restart_pressed() -> void:
 	_resume_game()
+	PlayerState.stamina = PlayerState.base_stamina
+	PlayerState.health = PlayerState.base_health
 	get_tree().reload_current_scene()
 
 func _on_back_to_menu_pressed() -> void:
