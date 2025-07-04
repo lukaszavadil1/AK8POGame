@@ -38,36 +38,36 @@ horizontal_alignment = 1
 
 [node name="Health" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 474.0
+offset_left = 448.0
 offset_top = 165.0
-offset_right = 654.0
+offset_right = 628.0
 offset_bottom = 217.0
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="Attack" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 475.0
+offset_left = 461.0
 offset_top = 242.0
-offset_right = 655.0
+offset_right = 641.0
 offset_bottom = 294.0
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="Stamina" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 475.0
+offset_left = 440.0
 offset_top = 321.0
-offset_right = 654.0
+offset_right = 619.0
 offset_bottom = 371.0
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="UpgradePoints" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 475.0
+offset_left = 402.0
 offset_top = 395.0
-offset_right = 654.0
+offset_right = 581.0
 offset_bottom = 445.0
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1

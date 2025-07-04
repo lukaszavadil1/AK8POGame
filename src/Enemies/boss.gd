@@ -126,5 +126,3 @@ func die() -> void:
 	PlayerState.add_points(points_on_death)
 	PlayerState.kill_count += 1
 	queue_free()
-	await get_tree().process_frame
-	get_tree().change_scene_to_file("res://Scenes/GameOverScreen.tscn")

@@ -12,7 +12,7 @@ extends CanvasLayer
 @onready var upgrade_stamina_button = $UpgradeStamina
 
 func _ready():
-	PlayerState.upgrade_points += GameState.current_level
+	PlayerState.upgrade_points += 2
 	update_ui()
 	PlayerState.stamina = PlayerState.base_stamina
 	PlayerState.health = PlayerState.base_health
