@@ -4,7 +4,7 @@
 Akční plošinová hra se strategickými prvky, kde hráč ovládá samuraje, který musí projít všemi levely, porazit nepřátele a nakonec i finálního bosse.
 
 ## Detailní popis
-Hráč ovládá postavu samuraje s unikátními schopnostmi. Hra kombinuje prvky plošinovky s taktickým bojem, kde každý úkon spotřebovává vyčerpatelnou výdrž (staminu).
+Hráč ovládá postavu samuraje s unikátními schopnostmi. Hra kombinuje prvky plošinovky s taktickým bojem, kde každý úkon spotřebovává vyčerpatelnou výdrž (staminu). Zabíjením nepřátel hráč získává body, které může využít k vylepšení svých schopností a zvýšení svých šancí na úspěch v soubojích.
 
 ## Zařazení hry
 **Žánr:** Akční, strategická, 2D plošinovka
@@ -41,6 +41,7 @@ Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný š
 ![Smrt](mechanics\death.png)
 
 ### Vylepšení hráče
+![Vylepseni](mechanics\upgrade.png)
 
 
 ## Grafické prvky a zvuky
@@ -49,7 +50,20 @@ Všechny grafické prvky a zvuky se nachází v adresáři Assets ve zdrojovém 
 ## Přehled levelů
 Hra obsahuje 5 levelů, v prvních 4 levelech jsou rozmístěni pěšáci a v posledním se nachází jejich velitel. Postupně se zvyšuje množství nepřátel na level a také náročnost terénu.
 
-<!-- TODO ADD LEVEL DESIGN LAYOUTS -->
+### Level 1
+![Level1](levels\level1.png)
+
+### Level 2
+![Level2](levels\level2.png)
+
+### Level 3
+![Level3](levels\level3.png)
+
+### Level 4
+![Level4](levels\level4.png)
+
+### Level 5
+![Level5](levels\level5.png)
 
 ## Technologie použité při vývoji
 **Godot 4:** engine pro vývoj hry
@@ -61,6 +75,8 @@ Hra obsahuje 5 levelů, v prvních 4 levelech jsou rozmístěni pěšáci a v po
 **Discord:** komunikace
 
 ## Tým
+Na projektu společně pracovali:
+
 **Josef Susík:** vývojář, projektový manažer, designér
 
 **Lukáš Zavadil:** vývojář, projektový manažer, designér
