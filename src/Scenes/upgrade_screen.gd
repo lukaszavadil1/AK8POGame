@@ -15,6 +15,8 @@ func _ready():
 	update_ui()
 	level_time_label.text = "Level Time: " + GameState.format_time(GameState.level_completion_time)
 	total_time_label.text = "Total Time: " + GameState.format_time(GameState.total_run_time)
+	PlayerState.stamina = PlayerState.base_stamina
+	PlayerState.health = PlayerState.base_health
 
 func update_ui():
 	upgrade_points_label.text = "Upgrade points: %d (%d kills)" % [PlayerState.upgrade_points, PlayerState.kill_count]
@@ -37,9 +39,6 @@ func try_upgrade(stat: String, amount: float):
 				PlayerState.base_stamina += amount
 			"attack":
 				PlayerState.attack += amount
-
-		PlayerState.stamina = PlayerState.base_stamina
-		PlayerState.health = PlayerState.base_health
 		PlayerState.upgrade_points -= 1
 		update_ui()
 

@@ -27,7 +27,7 @@ samuraje. Zasažením nepřítele dojde k doplnění menšího množství stamin
 
 Pěšáci - základní typ nepřátel, liší se množstvím životů
 
-Boss - finální nepřítel
+Velitel pěchoty - finální nepřítel
 
 ## Ovládání
 Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný šipkami, dále je podporován skok šipkou nahoru a útok stisknutím mezerníku. Stistknutím P, nebo Esc se zobrazí obrazovka pozastavení hry, kde je možné vidět aktuální statistiku hráče. Nabízí také možnost restartování levelu, nebo návrat na úvodní obrazovku.
@@ -40,23 +40,27 @@ Jediná postava, kterou hráč ovládá je samuraj. Pohyb do stran je možný š
 ### Smrt hráče
 ![Smrt](mechanics\death.png)
 
-## Grafické prvky a zvuky
-Všechny grafické prvky a zvuky se nachází v adresáři Assets ve zdrojovém adresáři projektu src. Grafika je ve stylu pixel artu a všechny postavy mají přiřazeny různé animace k akcím, které provádějí (pohyb, útok, poškození).
+### Vylepšení hráče
 
-<!-- TODO ADD SOUNDS -->
+
+## Grafické prvky a zvuky
+Všechny grafické prvky a zvuky se nachází v adresáři Assets ve zdrojovém adresáři projektu src. Grafika je ve stylu pixel artu a všechny postavy mají přiřazeny různé animace k akcím, které provádějí (pohyb, útok, poškození). Hráče skrze levely provází energetická hudba v duchu hudebního stylu 8-bit (chiptune), která přirozeně doplňuje atmosféru poskytovanou grafickým stylem hry. Odkazy na použité grafické a hudební prvky je možné najít v souboru resources.md v kořenovém adresáři projektu.
 
 ## Přehled levelů
-Hra obsahuje 5 levelů, v prvních 4 levelech jsou rozmístěni pěšáci a v posledním je finální boss.
+Hra obsahuje 5 levelů, v prvních 4 levelech jsou rozmístěni pěšáci a v posledním se nachází jejich velitel. Postupně se zvyšuje množství nepřátel na level a také náročnost terénu.
 
 <!-- TODO ADD LEVEL DESIGN LAYOUTS -->
 
 ## Technologie použité při vývoji
-Godot 4 - engine pro vývoj hry
-Git - verzování projektu a spolupráce
-Lucidchart - návrh diagramů herních mechanik
-Discord - komunikace
+**Godot 4:** engine pro vývoj hry
+
+**Git:** verzování projektu a spolupráce
+
+**Lucidchart:** návrh diagramů herních mechanik
+
+**Discord:** komunikace
 
 ## Tým
-Josef Susík - vývojář, projektový manažer, designér
+**Josef Susík:** vývojář, projektový manažer, designér
 
-Lukáš Zavadil - vývojář, projektový manažer, designér
+**Lukáš Zavadil:** vývojář, projektový manažer, designér
