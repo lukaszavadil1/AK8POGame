@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 # Combat settings
 const STAMINA_REGEN_RATE = 1.0
+const STAMINA_ON_HIT = 2.0
 const ATTACK_COST = 5.0
 const ATTACK_AREA_OFFSET_X = 32
 
@@ -85,6 +86,9 @@ func perform_attack() -> void:
 	for body in attack_area.get_overlapping_bodies():
 		if body.has_method("take_damage"):
 			body.take_damage(PlayerStats.attack)
+			# Reward for landing a precise hit
+			PlayerStats.stamina = min(PlayerStats.stamina + STAMINA_ON_HIT, PlayerStats.base_stamina)
+			stamina_bar.update_stamina(PlayerStats.stamina, PlayerStats.base_stamina)
 			hit = true
 			return
 	# Real samurai needs to be precise
@@ -130,4 +134,7 @@ func lose_health(amount: float) -> void:
 		
 func die() -> void:
 	PlayerStats.reset()
+	call_deferred("_change_scene")
+	
+func _change_scene() -> void:
 	get_tree().reload_current_scene()
