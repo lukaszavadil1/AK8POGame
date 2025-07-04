@@ -125,4 +125,6 @@ func lose_health(amount: float) -> void:
 		
 func die() -> void:
 	await get_tree().process_frame
+	PlayerState.health = PlayerState.base_health
+	PlayerState.stamina = PlayerState.base_stamina
 	get_tree().reload_current_scene()
